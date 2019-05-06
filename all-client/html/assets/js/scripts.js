@@ -13,12 +13,6 @@ $(document).ready(function(){
         $('.mobilenav').removeClass('is-open');
     });
 
-    $('body').on('keyup',function(evt) {
-        if (evt.keyCode == 27) {
-            $('.mobilenav.is-show').removeClass('is-open');
-        }
-    });
-
     var clickable = $('.menu-state').attr('data-clickable');
     $('.mobilenav li:has(ul)').addClass('has-sub');
     $('.mobilenav .has-sub>a').after('<em class="caret">');
@@ -29,7 +23,7 @@ $(document).ready(function(){
     }
 
     /* menu open and close on single click */
-    $(document).on('click','.mobilenav .has-sub>.trigger-caret',function(event){
+    $('.mobilenav .has-sub>.trigger-caret').click(function(){
         var element = $(this).parent('li');
         if (element.hasClass('is-open')) {
             element.removeClass('is-open');
@@ -51,7 +45,7 @@ $(document).ready(function(){
 ------------------------------------------------------------------------------*/
 $(window).on('load',function() {
     // page is fully loaded, including all frames, objects and images
-   
+
 });
 
 /* Script on scroll
